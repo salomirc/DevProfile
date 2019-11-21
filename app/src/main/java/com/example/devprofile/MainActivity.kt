@@ -1,7 +1,10 @@
 package com.example.devprofile
 
+import android.content.res.Resources
+import android.graphics.BitmapFactory
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.core.graphics.drawable.RoundedBitmapDrawableFactory
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
@@ -12,5 +15,11 @@ class MainActivity : AppCompatActivity() {
 
 //        var cameraImage: Int = R.drawable.camerabutton
 //        imageView4.setImageResource(cameraImage)
+
+        val bitmap = BitmapFactory.decodeResource(resources, R.drawable.devslopesprofilelogo)
+        val rounded = RoundedBitmapDrawableFactory.create(resources, bitmap)
+        rounded.cornerRadius = 20f
+        //rounded.isCircular = true
+        logo.setImageDrawable(rounded)
     }
 }
